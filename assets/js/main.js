@@ -24,3 +24,22 @@ window.onscroll = function(){
 
 }
 window.scrollTo(0, 1)
+
+// audio
+
+let soundbutton = document.querySelector('.soundButton'),
+		audio = document.querySelector('.audio')
+
+		soundbutton.addEventListener('click', e =>{
+			soundbutton.classList.toggle('paused')
+			audio.paused ? audio.play() : audio.pause()
+		})
+
+
+
+window.onfocus = function(){
+	soundbutton.classList.contains('paused') ? audio.pause() : audio.play()
+}
+window.onblur = function(){
+	audio.pause()
+}
